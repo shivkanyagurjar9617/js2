@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+
+        <script>
+             var h = document.createElement('header'); 
+
+             //now add class Selector
+            h.setAttribute('class',"s_header");
+
+             var m = document.createElement('div');
+             var f = document.createElement('footer');
+
+             h.innerHTML = 'Header';
+
+
+             console.log(h);  
+             console.log(m);  
+             console.log(f);  
+             document.body.appendChild(h);
+             document.body.appendChild(m);
+
+             //Now add the class attr to div
+            document.querySelector('header.s_header ~ div').setAttribute('class','s_main');
+
+
+            var x = document.getElementsByClassName('s_main');
+            console.log(x[0]);
+            x[0].style.color='red';
+            //it will return a collection [] Array
+
+
+             document.body.appendChild(f);
+
+             document.querySelector('div').innerHTML = 'Main Area';
+
+             var fe = document.querySelector('div ~ footer');
+
+             fe.innerHTML = 'Footer';
+
+             //create the button
+             var b = document.createElement('button');
+             b.innerHTML = 'Click Me!';
+             console.log(b);
+
+             fe.appendChild(b);
+
+
+             var be = document.getElementsByTagName('button');
+
+             console.log(be[0]);
+             /*
+                element.addEventListener(event, function, useCapture)
+             */
+
+             //1. Function Defination
+/* 
+             function anil(){ // named functions
+             }
+             function(){   // Anonymous Function
+             } */
+            be[0].addEventListener('click',function(){
+                alert('You CLicked Me!');
+                h.style.color = 'green';
+            });
+
+
+
+
+        </script>
+    </body>
+</html> 
